@@ -3,7 +3,8 @@
 #####1. pull docker image
 
 ```
-sudo docker pull joway/hadoop:latest
+sudo docker pull joway/hadoop-cluster
+
 ```
 
 #####2. clone github repository
