@@ -7,11 +7,12 @@ N=${1:-3}
 # start hadoop master container
 sudo docker rm -f hadoop-master &> /dev/null
 echo "start hadoop-master container..."
+mkdir ~/src/
 sudo docker run -itd \
                 --net=hadoop \
                 -p 50070:50070 \
                 -p 8088:8088 \
-				-v ~/src:/root/src \
+		-v ~/src:/root/src \
                 --name hadoop-master \
                 --hostname hadoop-master \
                 joway/hadoop-cluster &> /dev/null
