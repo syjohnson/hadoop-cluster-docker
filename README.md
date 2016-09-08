@@ -1,24 +1,15 @@
-##Run Hadoop Cluster within Docker Containers
-
-- Blog: [Run Hadoop Cluster in Docker Update](http://kiwenlau.com/2016/06/26/hadoop-cluster-docker-update-english/)
-- 博客: [基于Docker搭建Hadoop集群之升级版](http://kiwenlau.com/2016/06/12/160612-hadoop-cluster-docker-update/)
-
-
-![alt tag](https://raw.githubusercontent.com/kiwenlau/hadoop-cluster-docker/master/hadoop-cluster-docker.png)
-
-
-###3 Nodes Hadoop Cluster
+### Nodes Hadoop Cluster
 
 #####1. pull docker image
 
 ```
-sudo docker pull kiwenlau/hadoop:1.0
+sudo docker pull joway/hadoop:latest
 ```
 
 #####2. clone github repository
 
 ```
-git clone https://github.com/kiwenlau/hadoop-cluster-docker
+git clone https://github.com/ninechapter/hadoop-cluster-docker
 ```
 
 #####3. create hadoop network
@@ -72,29 +63,13 @@ Hadoop    1
 Hello    2
 ```
 
-###Arbitrary size Hadoop cluster
+####7. sync src
 
-#####1. pull docker images and clone github repository
+本地目录: ~/src/
 
-do 1~3 like section A
+hadoop master 目录 : /root/src/
 
-#####2. rebuild docker image
+将代码copy到本地目录 ~/src/ 中, 但凡在该目录下的任何操作都会自动实时映射到 hadoop master 容器中的 /root/src/ 中
 
-```
-sudo ./resize-cluster.sh 5
-```
-- specify parameter > 1: 2, 3..
-- this script just rebuild hadoop image with different **slaves** file, which pecifies the name of all slave nodes
-
-
-#####3. start container
-
-```
-sudo ./start-container.sh 5
-```
-- use the same parameter as the step 2
-
-#####4. run hadoop cluster 
-
-do 5~6 like section A
+之后只要在本地~/src/中修改编辑代码, 在容器内执行命令即可
 
