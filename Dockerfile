@@ -46,5 +46,8 @@ RUN chmod +x ~/start-hadoop.sh && \
 # format namenode
 RUN /usr/local/hadoop/bin/hdfs namenode -format
 
+RUN mkdir /root/src/
+VOLUME /root/src/
+
 CMD [ "sh", "-c", "service ssh start; bash"]
 
