@@ -7,7 +7,11 @@ N=${1:-3}
 # start hadoop master container
 sudo docker rm -f hadoop-master &> /dev/null
 echo "start hadoop-master container..."
+
+# volume dir
 mkdir ~/src/
+sudo chmod -R 777 ~/src
+
 sudo docker run -itd \
                 --net=hadoop \
                 -p 50070:50070 \
