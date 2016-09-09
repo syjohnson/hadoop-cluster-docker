@@ -46,6 +46,12 @@ RUN chmod +x ~/start-hadoop.sh && \
 # format namenode
 RUN /usr/local/hadoop/bin/hdfs namenode -format
 
+RUN echo '\
+export JAVA_HOME=/usr/java/default \n\
+export PATH=${JAVA_HOME}/bin:${PATH} \n\
+export HADOOP_CLASSPATH=export HADOOP_CLASSPATH=/usr/lib/jvm/java-7-openjdk-amd64/lib/tools.jar \n\
+' >> ~/.bashrc 
+
 RUN mkdir /root/src/
 VOLUME /root/src/
 
