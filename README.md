@@ -10,7 +10,7 @@ sudo docker pull joway/hadoop-cluster
 #####2. clone github repository
 
 ```
-git clone https://github.com/ninechapter/hadoop-cluster-docker
+git clone https://github.com/joway/hadoop-cluster-docker
 ```
 
 #####3. create hadoop network
