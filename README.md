@@ -3,14 +3,14 @@
 #####1. pull docker image
 
 ```
-sudo docker pull joway/hadoop-cluster
+sudo docker pull yusun/hadoop-cluster
 
 ```
 
 #####2. clone github repository
 
 ```
-git clone https://github.com/joway/hadoop-cluster-docker
+git clone https://github.com/yusun/hadoop-cluster-docker
 ```
 
 #####3. create hadoop network

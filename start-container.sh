@@ -19,7 +19,7 @@ sudo docker run -itd \
 		-v ~/src:/root/src \
                 --name hadoop-master \
                 --hostname hadoop-master \
-                joway/hadoop-cluster &> /dev/null
+                yusun/hadoop-cluster &> /dev/null
 
 
 # start hadoop slave container
@@ -32,7 +32,7 @@ do
 	                --net=hadoop \
 	                --name hadoop-slave$i \
 	                --hostname hadoop-slave$i \
-	                joway/hadoop-cluster &> /dev/null
+	                yusun/hadoop-cluster &> /dev/null
 	i=$(( $i + 1 ))
 done 
 
